@@ -65,7 +65,7 @@
         	<div class="card mb-3 widget-content bg-night-fade">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
-                        <div class="widget-heading"><h5>Score</h5></div>
+                        <div class="widget-heading"><h5>Score </h5></div>
                         <div class="widget-subheading" style="color: transparent;">/</div>
                     </div>
                     <div class="widget-content-right">
