@@ -144,8 +144,8 @@
       <div class="modal-body">
         <div class="col-md-12">
           <div class="form-group">
-            <label>Fullname</label>
-            <input type="" name="fullname" id="fullname" class="form-control" placeholder="Input Fullname" autocomplete="off" required="">
+            <label>Full Name</label>
+            <input type="" name="fullname" id="fullname" class="form-control" placeholder="Full Name" autocomplete="off" required="">
           </div>
           <div class="form-group">
             <label>Birhdate</label>
@@ -172,13 +172,12 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Year Level</label>
+            <label>High School Year Level</label>
             <select class="form-control" name="year_level" id="year_level">
               <option value="0">Select year level</option>
               <option value="first year">First Year</option>
               <option value="second year">Second Year</option>
-              <option value="third year">Third Year</option>
-              <option value="fourth year">Fourth Year</option>
+
             </select>
           </div>
           <div class="form-group">
@@ -193,7 +192,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </div>
    </form>
@@ -208,7 +207,7 @@
    <form class="refreshFrm" id="addQuestionFrm" method="post">
      <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Question for <br><?php echo $selExamRow['ex_title']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Question for: <br><?php echo $selExamRow['ex_title']; ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -253,7 +252,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Add </button>
       </div>
       </form>
     </div>

@@ -20,7 +20,7 @@
                                 <th class="text-left ">Course</th>
                                 <th class="text-left ">Description</th>
                                 <th class="text-left ">Time limit</th>  
-                                <th class="text-left ">Display limit</th>  
+                                <th class="text-left ">Questions</th>  
                                 <th class="text-center" width="20%">Action</th>
                             </tr>
                             </thead>

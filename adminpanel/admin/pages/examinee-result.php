@@ -59,7 +59,7 @@
                                                     <?php 
                                                         $score = $selScore->rowCount();
                                                         $ans = $score / $over * 100;
-                                                        echo number_format($ans,2);
+                                                        echo number_format($ans);
                                                         // echo "$ans";
                                                         echo "%";
                                                         

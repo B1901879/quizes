@@ -1,7 +1,7 @@
 <div class="app-main__outer">
         <div class="app-main__inner">
              
-
+          <!-- //view ranking page -->
 
             <?php 
                 @$exam_id = $_GET['exam_id'];
@@ -21,13 +21,13 @@
                    <div class="app-page-title">
                     <div class="page-title-wrapper">
                         <div class="page-title-heading">
-                            <div><b class="text-primary">RANKING BY EXAM</b><br>
+                            <div><b class="text-primary">RANKING</b><br>
                                 Exam Name : <?php echo $selEx['ex_title']; ?><br><br>
                                <span class="border" style="padding:10px;color:black;background-color: yellow;">Excellence</span>
                                <span class="border" style="padding:10px;color:white;background-color: green;">Very Good</span>
                                <span class="border" style="padding:10px;color:white;background-color: blue;">Good</span>
                                <span class="border" style="padding:10px;color:white;background-color: red;">Failed</span>
-                               <span class="border" style="padding:10px;color:black;background-color: #E9ECEE;">Not g</span>
+                               <span class="border" style="padding:10px;color:black;background-color: #E9ECEE;">Not Good</span>
                             </div>
                         </div>
                     </div>
@@ -137,12 +137,12 @@
                 <div class="app-page-title">
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
-                        <div><b>RANKING BY EXAM</b></div>
+                        <div><b>RANKING</b></div>
                     </div>
                 </div>
                 </div> 
-
                  <div class="col-md-12">
+                 <!-- //Ranking page -->
                 <div class="main-card mb-3 card">
                     <div class="card-header">ExAM List
                     </div>

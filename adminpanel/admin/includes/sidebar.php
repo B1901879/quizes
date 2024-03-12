@@ -99,7 +99,7 @@
                                 <li>
                                     <a href="home.php?page=ranking-exam">
                                         <i class="metismenu-icon pe-7s-cup">
-                                        </i>Ranking By Exam
+                                        </i>Ranking
                                     </a>
                                 </li>
 
