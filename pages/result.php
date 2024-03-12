@@ -89,7 +89,7 @@
             <div class="card mb-3 widget-content bg-happy-green">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
-                        <div class="widget-heading"><h5>Percentage</h5></div>
+                        <div class="widget-heading"><h5>Score Percentage</h5></div>
                         <div class="widget-subheading" style="color: transparent;">/</div>
                         </div>
                         <div class="widget-content-right">
