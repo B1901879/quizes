@@ -48,7 +48,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                   <div class="col-md-6">
                       <div class="main-card mb-3 card">
                           <div class="card-header">
-                            <i class="header-icon lnr-license icon-gradient bg-plum-plate"> </i>Exam Information
+                            <i class="header-icon lnr-license icon-gradient bg-plum-plate"> </i>Quiz Information
                           </div>
                           <div class="card-body">
                            <form method="post" id="updateExamFrm">

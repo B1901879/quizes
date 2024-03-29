@@ -10,11 +10,11 @@ extract($_POST);
 
  if($selExamAttmpt->rowCount() > 0)
  {
- 	$res = array("res" => "already taken quizz", "msg" => $thisId);
+ 	$res = array("res" => "alreadyExam", "msg" => $thisId);
  }
  else
  {
- 	$res = array("res" => "Take Now");
+ 	$res = array("res" => "takeNow");
  }
 
 

@@ -22,7 +22,7 @@
                     <div class="page-title-wrapper">
                         <div class="page-title-heading">
                             <div><b class="text-primary">RANKING</b><br>
-                                Exam Name : <?php echo $selEx['ex_title']; ?><br><br>
+                                Course Name : <?php echo $selEx['ex_title']; ?><br><br>
                                <span class="border" style="padding:10px;color:black;background-color: yellow;">Excellence</span>
                                <span class="border" style="padding:10px;color:white;background-color: green;">Very Good</span>
                                <span class="border" style="padding:10px;color:white;background-color: blue;">Good</span>
@@ -37,7 +37,7 @@
                           <tbody>
                             <thead>
                                 <tr>
-                                    <th width="25%">Examinee Fullname</th>
+                                    <th width="25%">Participant Fullname</th>
                                     <th>Score / Over</th>
                                     <th>Percentage</th>
                                 </tr>
@@ -144,13 +144,13 @@
                  <div class="col-md-12">
                  <!-- //Ranking page -->
                 <div class="main-card mb-3 card">
-                    <div class="card-header">ExAM List
+                    <div class="card-header">Quiz List
                     </div>
                     <div class="table-responsive">
                         <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
                             <thead>
                             <tr>
-                                <th class="text-left pl-4">Exam Title</th>
+                                <th class="text-left pl-4">Quiz Title</th>
                                 <th class="text-left ">Course</th>
                                 <th class="text-left ">Description</th>
                                 <th class="text-center" width="8%">Action</th>
@@ -185,7 +185,7 @@
                                 { ?>
                                     <tr>
                                       <td colspan="5">
-                                        <h3 class="p-3">No Exam Found</h3>
+                                        <h3 class="p-3">No Quiz Found</h3>
                                       </td>
                                     </tr>
                                 <?php }
