@@ -33,7 +33,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
             <div class="app-page-title">
                 <div class="page-title-wrapper">
                      <div class="page-title-heading">
-                        <div> MANAGE EXAM
+                        <div> MANAGE Quiz
                             <div class="page-title-subheading">
                               Add Question for <?php echo $selExamRow['ex_title']; ?>
                             </div>
@@ -66,18 +66,18 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                               </div>
 
                               <div class="form-group">
-                                <label>Exam Title</label>
+                                <label>Quiz Title</label>
                                 <input type="hidden" name="examId" value="<?php echo $selExamRow['ex_id']; ?>">
                                 <input type="" name="examTitle" class="form-control" required="" value="<?php echo $selExamRow['ex_title']; ?>">
                               </div>  
 
                               <div class="form-group">
-                                <label>Exam Description</label>
+                                <label>Quiz Description</label>
                                 <input type="" name="examDesc" class="form-control" required="" value="<?php echo $selExamRow['ex_description']; ?>">
                               </div>  
 
                               <div class="form-group">
-                                <label>Exam Time limit</label>
+                                <label>Quiz Time limit</label>
                                 <select class="form-control" name="examLimit" required="">
                                   <option value="<?php echo $selExamRow['ex_time_limit']; ?>"><?php echo $selExamRow['ex_time_limit']; ?> Minutes</option>
                                   <option value="10">10 Minutes</option> 
@@ -107,7 +107,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                         $selQuest = $conn->query("SELECT * FROM exam_question_tbl WHERE exam_id='$exId' ORDER BY eqt_id desc");
                     ?>
                      <div class="main-card mb-3 card">
-                          <div class="card-header"><i class="header-icon lnr-license icon-gradient bg-plum-plate"> </i>Exam Question's 
+                          <div class="card-header"><i class="header-icon lnr-license icon-gradient bg-plum-plate"> </i>Quiz Question's 
                             <span class="badge badge-pill badge-primary ml-2">
                               <?php echo $selQuest->rowCount(); ?>
                             </span>

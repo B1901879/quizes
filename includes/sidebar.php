@@ -33,11 +33,11 @@
             <ul class="vertical-nav-menu">
 
          
-                <li class="app-sidebar__heading">AVAILABLE EXAM'S</li>
+                <li class="app-sidebar__heading">AVAILABLE Quizz'S</li>
                 <li>
                 <a href="#">
                      <i class="metismenu-icon pe-7s-display2"></i>
-                     All Exam's
+                     All Quizz
                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
                 <ul >
@@ -66,7 +66,7 @@
                         else
                         { ?>
                             <a href="#">
-                                <i class="metismenu-icon"></i>No Exam's @ the moment
+                                <i class="metismenu-icon"></i>No Quizzes at the moment
                             </a>
                         <?php }
                      ?>
@@ -75,7 +75,7 @@
                 </ul>
                 </li>
 
-                 <li class="app-sidebar__heading">TAKEN EXAM'S</li>
+                 <li class="app-sidebar__heading">TAKEN Quiz</li>
                 <li>
                   <?php 
                     $selTakenExam = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id = ea.exam_id WHERE exmne_id='$exmneId' ORDER BY ea.examat_id  ");
@@ -91,7 +91,7 @@
                     }
                     else
                     { ?>
-                        <a href="#" class="pl-3">You are not taking exam yet</a>
+                        <a href="#" class="pl-3">You are not taking any quizes yet</a>
                     <?php }
                     
                    ?>

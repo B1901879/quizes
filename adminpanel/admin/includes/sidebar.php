@@ -57,24 +57,24 @@
                                     </ul>
                                 </li>
                                
-                                <li class="app-sidebar__heading">MANAGE EXAM</li>
+                                <li class="app-sidebar__heading">MANAGE Quizz</li>
                                 <li>
                                     <a href="#">
                                          <i class="metismenu-icon pe-7s-display2"></i>
-                                         Exam
+                                         Quizz
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul>
                                         <li>
                                             <a href="#" data-toggle="modal" data-target="#modalForExam">
                                                 <i class="metismenu-icon"></i>
-                                                Add Exam
+                                                Add Quizz
                                             </a>
                                         </li>
                                         <li>
                                             <a href="home.php?page=manage-exam">
                                                 <i class="metismenu-icon">
-                                                </i>Manage Exam
+                                                </i>Manage Quizz
                                             </a>
                                         </li>
                                        
@@ -82,17 +82,17 @@
                                 </li>
                            
                          
-                                <li class="app-sidebar__heading">MANAGE EXAMINEE</li>
+                                <li class="app-sidebar__heading">MANAGE Participant</li>
                                 <li>
                                     <a href="" data-toggle="modal" data-target="#modalForAddExaminee">
                                         <i class="metismenu-icon pe-7s-add-user">
-                                        </i>Add Examinee
+                                        </i>Add Participant
                                     </a>
                                 </li>
                                 <li>
                                     <a href="home.php?page=manage-examinee">
                                         <i class="metismenu-icon pe-7s-users">
-                                        </i>Manage Examinee
+                                        </i>Manage Participant
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">RANKING</li>
