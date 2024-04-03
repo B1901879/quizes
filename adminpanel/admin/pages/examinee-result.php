@@ -20,6 +20,7 @@
                                 <th>Fullname</th>
                                 <th>Exam Name</th>
                                 <th>Scores</th>
+                                <th>Time Spend</th>
                                 <th>Ratings</th>
                                 <!-- <th width="10%"></th> -->
                             </tr>
@@ -39,6 +40,17 @@
                                                 $exam_id = $selExName['ex_id'];
                                                 echo $selExName['ex_title'];
                                               ?>
+                                           </td>
+                                           <td>
+                                                    <?php 
+                                                    $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$eid' AND ea.exam_id='$exam_id' AND ea.exans_status='new' ");
+                                                      ?>
+                                                <span>
+                                                    <?php echo $selScore->rowCount(); ?>
+                                                    <?php 
+                                                        $over  = $selExName['ex_questlimit_display'];
+                                                     ?>
+                                                </span> / <?php echo $over; ?>
                                            </td>
                                            <td>
                                                     <?php 
