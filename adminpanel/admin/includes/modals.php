@@ -62,7 +62,7 @@
    <form class="refreshFrm" id="addExamFrm" method="post">
      <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Exam</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Quiz</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -90,7 +90,7 @@
           </div>
 
           <div class="form-group">
-            <label>Exam Time Limit</label>
+            <label>Quiz Time Limit</label>
             <select class="form-control" name="timeLimit" required="">
               <option value="0">Select time</option>
               <option value="10">10 Minutes</option> 
@@ -108,12 +108,12 @@
           </div>
 
           <div class="form-group">
-            <label>Exam Title</label>
+            <label>Quiz Title</label>
             <input type="" name="examTitle" class="form-control" placeholder="Input Exam Title" required="">
           </div>
 
           <div class="form-group">
-            <label>Exam Description</label>
+            <label>Quiz Description</label>
             <textarea name="examDesc" class="form-control" rows="4" placeholder="Input Exam Description" required=""></textarea>
           </div>
 
@@ -136,7 +136,7 @@
    <form class="refreshFrm" id="addExamineeFrm" method="post">
      <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Examinee</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Participant</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

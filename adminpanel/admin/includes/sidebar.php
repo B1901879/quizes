@@ -108,7 +108,7 @@
                                 <li>
                                     <a href="home.php?page=examinee-result">
                                         <i class="metismenu-icon pe-7s-cup">
-                                        </i>Examinee Result
+                                        </i>Participant Result
                                     </a>
                                 </li>
                               
