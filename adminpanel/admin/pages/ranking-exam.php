@@ -26,7 +26,7 @@
             <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
                 <thead>
                     <tr>
-                        <th width="25%">Participant Fullname</th>
+                        <th width="25%">Student's Fullname</th>
                         <th>Score / Over</th>
                         <th>Percentage</th>
                     </tr>

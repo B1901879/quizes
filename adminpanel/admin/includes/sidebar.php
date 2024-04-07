@@ -82,17 +82,17 @@
                                 </li>
                            
                          
-                                <li class="app-sidebar__heading">MANAGE Participant</li>
+                                <li class="app-sidebar__heading">MANAGE Student</li>
                                 <li>
                                     <a href="" data-toggle="modal" data-target="#modalForAddExaminee">
                                         <i class="metismenu-icon pe-7s-add-user">
-                                        </i>Add Participant
+                                        </i>Add Student
                                     </a>
                                 </li>
                                 <li>
                                     <a href="home.php?page=manage-examinee">
                                         <i class="metismenu-icon pe-7s-users">
-                                        </i>Manage Participant
+                                        </i>Manage Student
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">RANKING</li>
@@ -108,7 +108,7 @@
                                 <li>
                                     <a href="home.php?page=examinee-result">
                                         <i class="metismenu-icon pe-7s-cup">
-                                        </i>Participant Result
+                                        </i>Student's Result
                                     </a>
                                 </li>
                               
