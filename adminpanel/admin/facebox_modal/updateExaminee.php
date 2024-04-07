@@ -49,7 +49,7 @@
      </div>
 
      <div class="form-group">
-        <legend>Year level</legend>
+        <legend>Standard level</legend>
         <input type="" name="exYrlvl" class="form-control" required="" value="<?php echo $selExmne['exmne_year_level']; ?>" >
      </div>
 

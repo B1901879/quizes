@@ -1,3 +1,6 @@
+
+
+
 <div class="app-sidebar sidebar-shadow">
     <div class="app-header__logo">
         <div class="logo-src"></div>
@@ -33,11 +36,11 @@
             <ul class="vertical-nav-menu">
 
          
-                <li class="app-sidebar__heading">AVAILABLE EXAM'S</li>
+                <li class="app-sidebar__heading">AVAILABLE Quizz'S</li>
                 <li>
                 <a href="#">
                      <i class="metismenu-icon pe-7s-display2"></i>
-                     All Exam's
+                     All Quizz
                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
                 <ul >
@@ -66,7 +69,7 @@
                         else
                         { ?>
                             <a href="#">
-                                <i class="metismenu-icon"></i>No Exam's @ the moment
+                                <i class="metismenu-icon"></i>No Quizzes at the moment
                             </a>
                         <?php }
                      ?>
@@ -75,29 +78,26 @@
                 </ul>
                 </li>
 
-                 <li class="app-sidebar__heading">TAKEN EXAM'S</li>
-                <li>
-                  <?php 
-                    $selTakenExam = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id = ea.exam_id WHERE exmne_id='$exmneId' ORDER BY ea.examat_id  ");
+                 <li class="app-sidebar__heading">TAKEN Quiz</li>
+                 <li>
+    <?php 
+    $selTakenExam = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id = ea.exam_id WHERE exmne_id='$exmneId' ORDER BY ea.atmpAns ASC");
 
-                    if($selTakenExam->rowCount() > 0)
-                    {
-                        while ($selTakenExamRow = $selTakenExam->fetch(PDO::FETCH_ASSOC)) { ?>
-                            <a href="home.php?page=result&id=<?php echo $selTakenExamRow['ex_id']; ?>" >
-                               
-                                <?php echo $selTakenExamRow['ex_title']; ?>
-                            </a>
-                        <?php }
-                    }
-                    else
-                    { ?>
-                        <a href="#" class="pl-3">You are not taking exam yet</a>
-                    <?php }
-                    
-                   ?>
-
-                    
-                </li>
+    if($selTakenExam->rowCount() > 0)
+    {
+        $counter = 1;
+        while ($selTakenExamRow = $selTakenExam->fetch(PDO::FETCH_ASSOC)) { ?>
+            <a href="home.php?page=result&id=<?php echo $selTakenExamRow['ex_id']; ?>&atmpAnsid=<?php echo $selTakenExamRow['atmpAns']; ?>" >
+                <?php echo $counter++; ?>. <?php echo $selTakenExamRow['ex_title']; ?>
+            </a>
+        <?php }
+    }
+    else
+    { ?>
+        <a href="#" class="pl-3">You have not taken any quizzes yet</a>
+    <?php }
+    ?>
+</li>
 
 
                 <li class="app-sidebar__heading">FEEDBACKS</li>

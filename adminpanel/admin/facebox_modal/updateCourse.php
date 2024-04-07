@@ -17,7 +17,7 @@
     <input type="" name="newCourseName" class="form-control" required="" value="<?php echo $selCourse['cou_name']; ?>" >
   </div>
   <div class="form-group" align="right">
-    <button type="submit" class="btn btn-sm btn-primary">Update Now</button>
+    <button type="submit" class="btn btn-sm btn-primary">Update </button>
   </div>
 </form>
   </div>

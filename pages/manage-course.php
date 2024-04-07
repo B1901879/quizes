@@ -4,7 +4,7 @@
             <div class="app-page-title">
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
-                        <div>MANAGE e</div>
+                        <div>MANAGE Quiz</div>
                     </div>
                 </div>
             </div>        
