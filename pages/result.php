@@ -1,6 +1,6 @@
 <?php
 
-$atmpAnsid = isset($_GET['atmpAnsid']) ? $_GET['atmpAnsid'] : null;
+$atmpAnsid = isset($_GET['atmpAnsid']) ? $_GET['atmpAnsid'] : 1;
 
 $examId = isset($_GET['id']) ? $_GET['id'] : null;
 $selExam = $conn->query("SELECT * FROM exam_tbl WHERE ex_id='$examId'")->fetch(PDO::FETCH_ASSOC);
