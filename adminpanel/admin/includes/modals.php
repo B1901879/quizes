@@ -266,7 +266,7 @@
    <form class="refreshFrm" id="addFeebacks" method="post">
      <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Submit Feedbacks</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Feedbacks to Students</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -274,22 +274,25 @@
       <div class="modal-body">
         <div class="col-md-12">
           <div class="form-group">
-            <label>Feedback AS</label><br>
-            <?php 
-               $selMe = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$exmneId' ")->fetch(PDO::FETCH_ASSOC);
-             ?>
-            <input type="radio" name="asMe" value="<?php echo $selMe['exmne_fullname']; ?>"> <?php echo $selMe['exmne_fullname']; ?> <br>
-            <input type="radio" name="asMe" value="Anonymous"> Anonymous
+            <label>Select Student</label><br>
+            <select name="studentId" class="form-control">
+              <?php 
+                $students = $conn->query("SELECT * FROM examinee_tbl")->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($students as $student) {
+                  echo "<option value='".$student['exmne_id']."'>".$student['exmne_fullname']."</option>";
+                }
+              ?>
+            </select>
             
-          </div>
           <div class="form-group">
-           <textarea name="myFeedbacks" class="form-control" rows="3" placeholder="Input your feedback here.."></textarea>
+            <label>Feedback for Student</label>
+            <textarea name="teacherFeedbacks" class="form-control" rows="3" placeholder="Input your feedback for the student here.."></textarea>
           </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Submit Feedback</button>
       </div>
     </div>
    </form>
