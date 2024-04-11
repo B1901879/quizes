@@ -112,14 +112,13 @@
                                     </a>
                                 </li>
                               
-
-                                 <li class="app-sidebar__heading">FEEDBACKS</li>
+                                
                                 <li>
-                                    <a href="home.php?page=feedbacks">
-                                        <i class="metismenu-icon pe-7s-chat">
-                                        </i>All Feedbacks
+                                    <a href="#feedbacksModal" data-toggle="modal" data-target="#feedbacksModal">
+                                        <i class="metis-menu-icon pe-7s-chat"></i>Add Feedback
                                     </a>
-                                </li>   
+                                </li>
+
                                                                                            
                             </ul>
                         </div>

@@ -20,9 +20,9 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(login-ui/images/bg-01.jpg);">
+				<div class="login100-form-title" style="background-image: url(login-ui/images/signinimage.jpg);">
 					<span class="login100-form-title-1">
-						Sign In
+						Administrator <br> Log In
 					</span>
 				</div>
 
@@ -44,8 +44,10 @@
 						<button type="submit" class="login100-form-btn">
 							Login
 						</button>
-					</div>
+						<a href="/CEE/landing.html" class="login100-form-btn"> Back </a>						                                        				                       																
+                    </div>
 				</form>
+                				
 			</div>
 		</div>
 	</div>
