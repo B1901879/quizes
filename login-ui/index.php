@@ -22,7 +22,7 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(login-ui/images/signinimage.jpg);">
 					<span class="login100-form-title-1">
-						Sign IN
+					Student <br> Log In
 					</span>
 				</div>
 
