@@ -383,3 +383,46 @@ function refreshDiv()
 }
 
 
+$(document).on("submit", "#addFeebacks", function() {
+  var feedbackText = $("#feedbackInput").val(); // Assuming the input field has an id of feedbackInput
+
+  // Check if the input is empty
+  if (!feedbackText.trim()) {
+      Swal.fire(
+          'Error',
+          'Input error, empty input.',
+          'error'
+      );
+      return false;
+  }
+
+  // Check if the input exceeds the 2000 character limit
+  if (feedbackText.length > 2000) {
+      Swal.fire(
+          'Error',
+          'Input error, Input exceeding the character limitation.',
+          'error'
+      );
+      return false;
+  }
+
+  // Proceed with AJAX submission if validation passes
+  $.post("query/submitFeedbacksExe.php", $(this).serialize(), function(data) {
+      if (data.res == "limit") {
+          Swal.fire(
+              'Error',
+              'You reached the 3 limit maximum for feedbacks',
+              'error'
+          );
+      } else if (data.res == "success") {
+          Swal.fire(
+              'Success',
+              'Your feedbacks has been submitted successfully',
+              'success'
+          );
+          $('#addFeebacks')[0].reset();
+      }
+  }, 'json');
+
+  return false;
+});
