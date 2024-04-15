@@ -1,6 +1,6 @@
 <?php
 
-$atmpAnsid = isset($_GET['atmpAnsid']) ? $_GET['atmpAnsid'] : null;
+$atmpAnsid = isset($_GET['atmpAnsid']) ? $_GET['atmpAnsid'] : 1;
 
 $examId = isset($_GET['id']) ? $_GET['id'] : null;
 $selExam = $conn->query("SELECT * FROM exam_tbl WHERE ex_id='$examId'")->fetch(PDO::FETCH_ASSOC);
@@ -54,24 +54,26 @@ $attemptResultPercentageFormatted = number_format($attemptResultPercentage, 2) .
                             <h5 class="card-title">Your Answer</h5>
                             <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
                                 <?php 
-                                $selQuest = $conn->query("SELECT eqt.*, ea.* FROM ( SELECT DISTINCT eqt_id, exam_id FROM exam_question_tbl WHERE exam_id = $examId ) AS distinct_eqt INNER JOIN exam_question_tbl eqt ON distinct_eqt.eqt_id = eqt.eqt_id INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id = $exmneId AND ea.atmpAns =$atmpAnsid");
+                               $selQuest = $conn->query("SELECT eqt.*, ea.*, ea.exans_answer AS examinee_answer, eqt.exam_answer AS correct_answer FROM ( SELECT DISTINCT eqt_id, exam_id FROM exam_question_tbl WHERE exam_id = $examId ) AS distinct_eqt INNER JOIN exam_question_tbl eqt ON distinct_eqt.eqt_id = eqt.eqt_id INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id = $exmneId AND ea.atmpAns = $atmpAnsid");
                                 $i = 1;
                                 while ($selQuestRow = $selQuest->fetch(PDO::FETCH_ASSOC)) { ?>
                                     <tr>
                                         <td>
                                             <b><p><?php echo $i++; ?> ) <?php echo $selQuestRow['exam_question']; ?></p></b>
                                             <label class="pl-4 text-success">
-                                                Answer : 
+                                                Your Answer : 
                                                 <?php 
-                                                if($selQuestRow['exam_answer'] != $selQuestRow['exans_answer'])
-                                                { ?>
-                                                    <span style="color:red"><?php echo $selQuestRow['exans_answer']; ?></span>
-                                                <?php }
-                                                else
-                                                { ?>
-                                                    <span class="text-success"><?php echo $selQuestRow['exans_answer']; ?></span>
-                                                <?php }
-                                                ?>
+    if($selQuestRow['exam_answer'] != $selQuestRow['examinee_answer'])
+    { ?>
+        <span style="color:red"><?php echo $selQuestRow['examinee_answer']; ?> (Incorrect)</span>
+        <br>
+        Correct Answer: <span style="color:black"><?php echo $selQuestRow['correct_answer']; ?></span>
+    <?php }
+    else
+    { ?>
+        <span style="color:green"><?php echo $selQuestRow['examinee_answer']; ?> (Correct)</span>
+    <?php }
+?>
                                             </label>
                                         </td>
                                     </tr>

@@ -87,7 +87,7 @@
                     <div class="card mb-3 widget-content bg-arielle-smile">
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
-                                <div class="widget-heading">Total Exam</div>
+                                <div class="widget-heading">Total Quiz</div>
                                 <div class="widget-subheading" style="color:transparent;">.</div>
                             </div>
                             <div class="widget-content-right">
@@ -102,7 +102,7 @@
                     <div class="card mb-3 widget-content bg-grow-early">
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
-                                <div class="widget-heading">Total Examinee</div>
+                                <div class="widget-heading">Total Student</div>
                                 <div class="widget-subheading" style="color:transparent;">.</div>
                             </div>
                             <div class="widget-content-right">

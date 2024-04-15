@@ -52,7 +52,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<script src="login-ui/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="login-ui/vendor/animsition/js/animsition.min.js"></script>
 	<script src="login-ui/vendor/bootstrap/js/popper.js"></script>
@@ -62,6 +61,5 @@
 	<script src="login-ui/vendor/daterangepicker/daterangepicker.js"></script>
 	<script src="login-ui/vendor/countdowntime/countdowntime.js"></script>
 	<script src="login-ui/js/main.js"></script>
-
 </body>
 </html>

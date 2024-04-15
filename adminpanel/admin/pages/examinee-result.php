@@ -40,9 +40,12 @@ if($selExmne->rowCount() > 0) {
                 echo $exam_title;
                 ?>
             </td>
+            
             <td>
                 <?php 
+                
                 $attempt_id = $selExmneRow['atmpAns'];
+                $totalQuestionsAttempted = $conn->query("SELECT COUNT(*) AS total_attempted FROM exam_answers WHERE axmne_id='$eid' AND exam_id='$exam_id' AND atmpAns='$attempt_id' AND exans_status='new'")->fetch(PDO::FETCH_ASSOC)['total_attempted'];
                 $selScore = $conn->query("SELECT COUNT(*) AS correct_answers FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer WHERE ea.axmne_id='$eid' AND ea.exam_id='$exam_id' AND ea.atmpAns='$attempt_id' AND ea.exans_status='new'");
                 $row = $selScore->fetch(PDO::FETCH_ASSOC);
                 $score = $row['correct_answers'];
