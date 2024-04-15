@@ -69,7 +69,7 @@ if($selExmne->rowCount() > 0) {
         </td>
     </tr>
 <?php } ?>
-                            ?>
+                            
                         </tbody>
                     </table>
                 </div>
