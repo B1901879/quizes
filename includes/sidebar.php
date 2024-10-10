@@ -100,12 +100,23 @@
 </li>
 
 
-                
+                </li>
+
+                    <li class="app-sidebar__heading">Feedbacks</li>
+                <li>
                 <li>
                     <a href="home.php?page=view-feedback">
                         <i class="metis-menu-icon pe-7s-look"></i>View Feedback
                     </a>
                 </li>
+
+                <li class="app-sidebar__heading">MANAGE Learning Materials</li>
+                    <li>
+                        <a href="viewLearningmaterials.php">
+                            <i class="metismenu-icon pe-7s-add-user">
+                            </i>View Learning Materials
+                        </a>
+                    </li>
 
                                   
             </ul>
