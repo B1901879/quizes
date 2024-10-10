@@ -100,13 +100,25 @@
 </li>
 
 
-                <li class="app-sidebar__heading">FEEDBACKS</li>
+                </li>
+
+                    <li class="app-sidebar__heading">Feedbacks</li>
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#feedbacksModal" >
-                        Add Feedbacks                        
+                <li>
+                    <a href="home.php?page=view-feedback">
+                        <i class="metis-menu-icon pe-7s-look"></i>View Feedback
                     </a>
                 </li>
-                
+
+                <li class="app-sidebar__heading">MANAGE Learning Materials</li>
+                    <li>
+                        <a href="viewLearningmaterials.php">
+                            <i class="metismenu-icon pe-7s-add-user">
+                            </i>View Learning Materials
+                        </a>
+                    </li>
+
+                                  
             </ul>
         </div>
     </div>
