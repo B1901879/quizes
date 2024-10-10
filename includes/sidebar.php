@@ -100,21 +100,28 @@
 </li>
 
 
-                </li>
 
-                    <li class="app-sidebar__heading">Feedbacks</li>
-                <li>
-                <li>
-                    <a href="home.php?page=view-feedback">
-                        <i class="metis-menu-icon pe-7s-look"></i>View Feedback
-                    </a>
-                </li>
 
-                <li class="app-sidebar__heading">MANAGE Learning Materials</li>
+                <li class="app-sidebar__heading">Learning Materials</li>
                     <li>
                         <a href="viewLearningmaterials.php">
-                            <i class="metismenu-icon pe-7s-add-user">
+                            <i class="metismenu-icon pe-7s-note2">
                             </i>View Learning Materials
+                        </a>
+                    </li>
+                    <li class="app-sidebar__heading">Performance Dashboard</li>
+                    <li>
+                        <a href="dashboard.php">
+                            <i class="metismenu-icon pe-7s-graph3">
+                            </i>View Performance
+                        </a>
+                    </li>
+
+                    <li class="app-sidebar__heading">Feedbacks</li>
+                    <li>
+                        <a href="viewfeedback.php">
+                            <i class="metismenu-icon pe-7s-look">
+                            </i>View Feedback
                         </a>
                     </li>
 
