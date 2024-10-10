@@ -22,7 +22,7 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(login-ui/images/signinimage.jpg);">
 					<span class="login100-form-title-1">
-						Sign IN
+					Student <br> Log In
 					</span>
 				</div>
 
@@ -46,6 +46,11 @@
 						</button>
 						<a href="/CEE/landing.html" class="login100-form-btn"> Back </a>
 					</div>
+					<div class="login-signup-prompt" style="text-align: center; margin-top: 20px;">
+    					Don't have an account yet? <a href="/CEE/signup.php" class="signup-link">Sign Up</a>
+					</div>
+					
+
 				</form>
 			</div>
 		</div>
