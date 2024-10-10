@@ -41,7 +41,24 @@
             <input type="hidden" name="examAction" id="examAction" >
         <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
         <?php 
-            $selQuest = $conn->query("SELECT * FROM exam_question_tbl WHERE exam_id='$examId' ORDER BY rand() LIMIT $exDisplayLimit ");
+           $queryMengapakah = "SELECT * FROM exam_question_tbl WHERE exam_id='$examId' AND exam_question LIKE '%mengapakah%' ORDER BY rand() LIMIT $exDisplayLimit";
+           $queryApakah = "SELECT * FROM exam_question_tbl WHERE exam_id='$examId' AND exam_question LIKE '%apakah%' ORDER BY rand() LIMIT $exDisplayLimit";
+           $queryRandom = "SELECT * FROM exam_question_tbl WHERE exam_id='$examId' ORDER BY rand() LIMIT $exDisplayLimit";
+           
+           // Randomly select one of the three queries
+           $randomQueryNumber = rand(1, 3);
+           
+           switch ($randomQueryNumber) {
+               case 1:
+                   $selQuest = $conn->query($queryMengapakah);
+                   break;
+               case 2:
+                   $selQuest = $conn->query($queryApakah);
+                   break;
+               case 3:
+                   $selQuest = $conn->query($queryRandom);
+                   break;
+           }
             if($selQuest->rowCount() > 0)
             {
                 $i = 1;
