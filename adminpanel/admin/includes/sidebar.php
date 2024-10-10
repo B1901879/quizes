@@ -95,6 +95,19 @@
                                         </i>Manage Student
                                     </a>
                                 </li>
+
+
+                                <li class="app-sidebar__heading">MANAGE Learning Materials</li>
+                                <li>
+                                    <a href="learningmaterials.php">
+                                        <i class="metismenu-icon pe-7s-add-user">
+                                        </i>Add Learning Materials
+                                    </a>
+                                </li>
+                                
+
+
+
                                 <li class="app-sidebar__heading">RANKING</li>
                                 <li>
                                     <a href="home.php?page=ranking-exam">
@@ -112,14 +125,13 @@
                                     </a>
                                 </li>
                               
-
-                                 <li class="app-sidebar__heading">FEEDBACKS</li>
+                                <li class="app-sidebar__heading">Feedbacks</li>
                                 <li>
-                                    <a href="home.php?page=feedbacks">
-                                        <i class="metismenu-icon pe-7s-chat">
-                                        </i>All Feedbacks
+                                    <a href="#feedbacksModal" data-toggle="modal" data-target="#feedbacksModal">
+                                        <i class="metis-menu-icon pe-7s-chat"></i>Add Feedback
                                     </a>
-                                </li>   
+                                </li>
+
                                                                                            
                             </ul>
                         </div>
