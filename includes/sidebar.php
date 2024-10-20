@@ -118,7 +118,15 @@
                         </a>
                     </li>
 
-                                  
+                    </li>
+
+            <li class="app-sidebar__heading">Community Chat</li>
+            <li>
+            <li>
+            <a href="forum.php">
+                <i class="metis-menu-icon pe-7s-global"></i>Leave a Discussion
+            </a>
+            </li>             
             </ul>
         </div>
     </div>
