@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container">
-        <h2>Add Feedback for a Student</h2>
+        <h2>Add Feedback for  Student</h2>
         <form method="POST" action="">
             <label for="student_id">Select Student:</label>
             <select name="student_id" required>
