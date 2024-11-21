@@ -134,6 +134,12 @@
                                     </a>
                                 </li>
 
+                                <li>
+                                    <a href="teacherfeedbackreplies.php">
+                                        <i class="metismenu-icon pe-7s-chat"></i>View Replies
+                                    </a>
+                                </li>
+
 
 
                                                                                            
