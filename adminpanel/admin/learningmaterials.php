@@ -122,7 +122,7 @@ $result = $conn->query($sql);
 
     <form action="" method="POST">
         <input type="text" name="form" placeholder="Form (e.g., Form 4)" required>
-        <input type="text" name="chapter" placeholder="Chapter (e.g., Chapter 1)" required>
+        <input type="text" name="chapter" placeholder="Chapter (e.g., 1)" required>
         <input type="text" name="title" placeholder="Title of the chapter" required>
         <input type="text" name="link" placeholder="YouTube or Document Link" required>
         <button type="submit" name="add">Add Material</button>

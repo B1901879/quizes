@@ -125,6 +125,13 @@
                         </a>
                     </li>
 
+                    <li class="app-sidebar__heading">Community Chat</li>
+                    <li>
+                        <a href="forum.php">
+                            <i class="metismenu-icon pe-7s-global"></i>Leave a Discussion
+                        </a>
+                    </li>          
+
                                   
             </ul>
         </div>
