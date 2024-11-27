@@ -100,7 +100,7 @@
                                 <li class="app-sidebar__heading">MANAGE Learning Materials</li>
                                 <li>
                                     <a href="learningmaterials.php">
-                                        <i class="metismenu-icon pe-7s-add-user">
+                                        <i class="metismenu-icon pe-7s-note2">
                                         </i>Add Learning Materials
                                     </a>
                                 </li>
@@ -125,15 +125,25 @@
                                     </a>
                                 </li>
                               
+                                
+                                
                                 <li class="app-sidebar__heading">Feedbacks</li>
                                 <li>
-                                    <a href="#feedbacksModal" data-toggle="modal" data-target="#feedbacksModal">
-                                        <i class="metis-menu-icon pe-7s-chat"></i>Add Feedback
+                                    <a href="teacherfeedbacks.php">
+                                        <i class="metismenu-icon pe-7s-chat"></i>Add Feedback
                                     </a>
                                 </li>
+
+                                <li>
+                                    <a href="teacherfeedbackreplies.php">
+                                        <i class="metismenu-icon pe-7s-chat"></i>View Replies
+                                    </a>
+                                </li>
+
+
 
                                                                                            
                             </ul>
                         </div>
                     </div>
-                </div>  
+                </div>   

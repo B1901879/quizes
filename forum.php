@@ -1,5 +1,3 @@
-
-
 <?php
 date_default_timezone_set('Asia/Kuala_Lumpur');
 $conn = mysqli_connect("localhost", "root", "", "cee_db");

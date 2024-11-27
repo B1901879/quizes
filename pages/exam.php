@@ -58,7 +58,7 @@
                case 3:
                    $selQuest = $conn->query($queryRandom);
                    break;
-           }
+           }                       
             if($selQuest->rowCount() > 0)
             {
                 $i = 1;
