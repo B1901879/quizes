@@ -1,4 +1,4 @@
-<?php
+<?php 
 date_default_timezone_set('Asia/Kuala_Lumpur');
 $conn = mysqli_connect("localhost", "root", "", "cee_db");
 
@@ -75,24 +75,24 @@ if(isset($_POST["submit"])){
     }
 
     .comments-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: flex-start;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: flex-start;
+    }
 
-.comment, .reply {
-  background: #fafafa;
-  margin-top: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  flex: 1 1 calc(33.33% - 30px); /* Adjust to 3 columns by default */
-  min-width: 250px; /* Set a minimum width for the boxes */
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
+    .comment, .reply {
+      background: #fafafa;
+      margin-top: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      flex: 1 1 calc(33.33% - 30px); /* Adjust to 3 columns by default */
+      min-width: 250px; /* Set a minimum width for the boxes */
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
 
     .comment:hover, .reply:hover {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -159,26 +159,27 @@ if(isset($_POST["submit"])){
       background: #45a049;
     }
   </style>
-    <body>
+  <body>
     <div class="container">
       <a href="index.php" class="back-button">Back</a>
       <div class="comments-container">
-      <div class="comments-container">
-    <?php
-    $datas = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = 0");
-    foreach ($datas as $data) {
-        ?>
-        <div class="comment" id="comment-<?php echo $data['id']; ?>">
-            <button class="minimize-button" onclick="toggleVisibility(<?php echo $data['id']; ?>)">Minimize</button>
-            <span class="preview-text" id="preview-<?php echo $data['id']; ?>"><?php echo substr($data['comment'], 0, 50); ?>...</span>
-            <div class="comment-content hidden"> <!-- Add the hidden class here -->
-                <?php require 'comment.php'; ?>
-            </div>
-        </div>
         <?php
-    }
-    ?>
-</div>
+        $datas = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = 0");
+        foreach ($datas as $data) {
+            ?>
+            <div class="comment" id="comment-<?php echo $data['id']; ?>">
+                <!-- Set initial button text to 'Show' -->
+                <button class="minimize-button" onclick="toggleVisibility(<?php echo $data['id']; ?>)">Show</button>
+                <span class="preview-text" id="preview-<?php echo $data['id']; ?>"><?php echo substr($data['comment'], 0, 50); ?>...</span>
+                <div class="comment-content hidden"> <!-- Add the hidden class here -->
+                    <?php require 'comment.php'; ?>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+      </div>
+
       <form action="" method="post">
         <h3 id="title">Leave a Topic</h3>
         <input type="hidden" name="reply_id" id="reply_id">
@@ -200,13 +201,14 @@ if(isset($_POST["submit"])){
         const minimizeButton = document.querySelector(`#comment-${commentId} .minimize-button`);
         const previewText = document.getElementById(`preview-${commentId}`);
 
+        // Check if the comment content is hidden or visible and toggle accordingly
         if (commentContent.classList.contains('hidden')) {
           commentContent.classList.remove('hidden');
-          minimizeButton.textContent = "Minimize";
+          minimizeButton.textContent = "Minimize";  // Change button to 'Minimize' when content is visible
           previewText.classList.add('hidden');
         } else {
           commentContent.classList.add('hidden');
-          minimizeButton.textContent = "Show";
+          minimizeButton.textContent = "Show";  // Change button to 'Show' when content is hidden
           previewText.classList.remove('hidden');
         }
       }

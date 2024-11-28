@@ -32,6 +32,8 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Manage Learning Materials</title>
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +42,7 @@ $result = $conn->query($sql);
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         .container {
             background-color: white;
@@ -48,10 +51,28 @@ $result = $conn->query($sql);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px; /* Increased width */
             width: 100%;
+            box-sizing: border-box;
         }
         h1 {
             text-align: center;
             color: #333;
+        }
+        .back-button {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .back-button i {
+            margin-right: 8px;
+        }
+        .back-button:hover {
+            background-color: #0d8bf2;
         }
         form {
             display: flex;
@@ -118,6 +139,9 @@ $result = $conn->query($sql);
 <body>
 
 <div class="container">
+    <!-- Back Button with Font Awesome Icon -->
+    <a href="home.php" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
+    
     <h1>Learning Materials</h1>
 
     <form action="" method="POST">

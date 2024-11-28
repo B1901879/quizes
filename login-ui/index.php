@@ -44,10 +44,10 @@
 						<button type="submit" class="login100-form-btn">
 							Login
 						</button>
-						<a href="/CEE/landing.html" class="login100-form-btn"> Back </a>
+						<a href="/quizes/landing.html" class="login100-form-btn"> Back </a>
 					</div>
 					<div class="login-signup-prompt" style="text-align: center; margin-top: 20px;">
-    					Don't have an account yet? <a href="/CEE/signup.php" class="signup-link">Sign Up</a>
+    					Don't have an account yet? <a href="/quizes/signup.php" class="signup-link">Sign Up</a>
 					</div>
 					
 

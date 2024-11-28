@@ -41,7 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box; /* Ensure padding is included in width calculation */
         }
         h2 {
             text-align: center;
@@ -50,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         label {
             font-size: 14px;
             color: #333;
+            display: block;
+            margin-bottom: 5px;
         }
         select, textarea, button {
             width: 100%;
@@ -58,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 14px;
+            box-sizing: border-box; /* Ensure padding is included in width calculation */
         }
         select {
             margin-bottom: 20px; /* Adding margin between select and textarea */
@@ -80,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container">
-        <h2>Add Feedback for  Student</h2>
+        <h2>Add Feedback for Student</h2>
         <form method="POST" action="">
             <label for="student_id">Select Student:</label>
             <select name="student_id" required>

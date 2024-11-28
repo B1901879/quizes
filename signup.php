@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         .container {
             background-color: white;
@@ -68,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in width calculation */
         }
         h2 {
             text-align: center;
@@ -76,12 +78,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .input-group {
             margin-bottom: 15px;
         }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
         input[type="text"], input[type="date"], input[type="email"], input[type="password"], select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+            box-sizing: border-box; /* Prevent overflow */
         }
         button {
             width: 100%;
@@ -157,3 +165,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 </body>
 </html>
+

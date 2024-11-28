@@ -30,10 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_content'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Feedback</title>
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
         }
         .container {
             width: 80%;
@@ -41,10 +45,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_content'])) {
             padding: 20px;
             background-color: #e0f7fa;
             border-radius: 10px;
+            box-sizing: border-box; /* Ensure padding doesn't cause overflow */
         }
         h2 {
             text-align: center;
             font-size: 24px;
+        }
+        .back-button {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 20px; /* Adds space below the button */
+        }
+        .back-button:hover {
+            background-color: #0d8bf2;
+        }
+        .back-button i {
+            margin-right: 8px; /* Adds space between icon and text */
         }
         .feedback {
             margin: 10px 0;
@@ -52,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_content'])) {
             background-color: #ffffff;
             border-left: 4px solid #4CAF50;
             border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in width calculation */
         }
         .reply {
             margin: 5px 0 10px 20px;
@@ -59,15 +82,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_content'])) {
             background-color: #f9f9f9;
             border-left: 3px solid #2196F3;
             border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in width calculation */
         }
         .reply-form {
             margin: 10px 0;
         }
         .reply-form textarea {
             width: 100%;
+            padding: 10px;
             height: 60px;
             margin: 5px 0;
-            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Prevents overflow */
+            font-size: 16px;
         }
         .reply-form button {
             background-color: #2196F3;
@@ -89,10 +117,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_content'])) {
 </head>
 <body>
     <div class="container">
-        <h2>Feedback from Teachers</h2>
+        <!-- Back Button with Font Awesome Icon -->
+        <a href="home.php" class="back-button"><i class="fas fa-arrow-left"></i>Back</a>
+        
+        <h2>Feedbacks from Teacher</h2>
         
         <?php if (empty($feedbacks)): ?>
-            <p class="no-feedback">There is no feedback from the teacher, please check again later :)</p>
+            <p class="no-feedback">There is no feedback from teacher, please check again later :)</p>
         <?php else: ?>
             <?php foreach ($feedbacks as $feedback): ?>
                 <div class="feedback">
@@ -124,4 +155,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reply_content'])) {
     </div>
 </body>
 </html>
-
