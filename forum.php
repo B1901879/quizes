@@ -8,7 +8,8 @@ if(isset($_POST["submit"])){
   $date = date('F d Y, h:i:s A');
   $reply_id = $_POST["reply_id"];
 
-  $query = "INSERT INTO tb_data VALUES('', '$name', '$comment', '$date', '$reply_id')";
+  // Insert comment or reply into the database
+  $query = "INSERT INTO tb_data (name, comment, date, reply_id) VALUES('$name', '$comment', '$date', '$reply_id')";
   mysqli_query($conn, $query);
 
   // Redirect to the same page after form submission to prevent duplication on refresh
@@ -17,201 +18,242 @@ if(isset($_POST["submit"])){
 }
 ?>
 
-<html>
-  <head></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Forum</title>
   <style>
-    /* Your existing CSS styles */
-    /* Styles for the minimize button */
-    .minimize-button {
-      background: #f44336;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 0.8em;
-      margin-bottom: 5px;
-      display: inline-block;
-    }
-    .preview-text {
-      display: inline;
-      color: #555;
-      margin-left: 10px;
-      font-size: 0.9em;
-    }
-    .minimize-button:hover {
-      background: #d32f2f;
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    /* Hidden class to hide elements */
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .back-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 2em;
+      color: #343a40;
+      margin-bottom: 40px;
+    }
+
+    .comments-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .comment, .reply {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: auto; /* Allow flexibility in height */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .comment:hover, .reply:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .comment .author, .reply .author {
+      font-weight: bold;
+      color: #007bff;
+      font-size: 1.1em;
+    }
+
+    .comment .date, .reply .date {
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .comment .text, .reply .text {
+      margin-top: 10px;
+      font-size: 1em;
+      color: #333;
+      flex-grow: 1;
+      overflow-y: auto; /* Allow scrolling if the content exceeds max-height */
+    }
+
+    /* Add max-height to prevent overly large replies */
+    .comment .text, .reply .text {
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .minimize-button {
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.3s;
+    }
+
+    .minimize-button:hover {
+      background-color: #e64a19;
+    }
+
     .hidden {
       display: none;
     }
 
-    .back-button {
-      background: #555;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 15px;
-      display: inline-block;
-      text-decoration: none;
-      font-size: 0.9em;
-    }
-
-    .back-button:hover {
-      background: #333;
-    }
-
-    .container {
-      background: #fff;
-      width: 1200px;
-      margin: 30px auto;
+    .form-container {
+      margin-top: 40px;
+      background-color: #f1f1f1;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .comments-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: flex-start;
-    }
-
-    .comment, .reply {
-      background: #fafafa;
-      margin-top: 10px;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      flex: 1 1 calc(33.33% - 30px); /* Adjust to 3 columns by default */
-      min-width: 250px; /* Set a minimum width for the boxes */
-      box-sizing: border-box;
-      transition: all 0.3s ease;
-    }
-
-    .comment:hover, .reply:hover {
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    h4 {
-      font-size: 1.1em;
-      margin-bottom: 5px;
-      color: #333;
-    }
-
-    p {
-      font-size: 0.9em;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    button.reply {
-      background: #ff9800;
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    button.reply:hover {
-      background: #e68900;
-    }
-
-    form {
-      margin: 20px 0;
-    }
-
-    form h3 {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    form input, form textarea {
+    .form-container input, .form-container textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
+      padding: 12px;
+      margin: 8px 0;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 1em;
       box-sizing: border-box;
-      font-size: 0.9em;
     }
 
-    form button.submit {
-      background: #4caf50;
+    .form-container button {
+      background-color: #4caf50;
       color: white;
       border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 1.1em;
       cursor: pointer;
-      padding: 12px;
-      border-radius: 5px;
-      font-size: 1em;
-      transition: background 0.3s;
+      transition: background-color 0.3s;
     }
 
-    form button.submit:hover {
-      background: #45a049;
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+
+    .form-container button:active {
+      transform: scale(0.98);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
     }
   </style>
-  <body>
-    <div class="container">
-      <a href="index.php" class="back-button">Back</a>
-      <div class="comments-container">
-        <?php
-        $datas = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = 0");
-        foreach ($datas as $data) {
-            ?>
-            <div class="comment" id="comment-<?php echo $data['id']; ?>">
-                <!-- Set initial button text to 'Show' -->
-                <button class="minimize-button" onclick="toggleVisibility(<?php echo $data['id']; ?>)">Show</button>
-                <span class="preview-text" id="preview-<?php echo $data['id']; ?>"><?php echo substr($data['comment'], 0, 50); ?>...</span>
-                <div class="comment-content hidden"> <!-- Add the hidden class here -->
-                    <?php require 'comment.php'; ?>
-                </div>
-            </div>
-            <?php
-        }
-        ?>
-      </div>
+</head>
+<body>
 
-      <form action="" method="post">
-        <h3 id="title">Leave a Topic</h3>
-        <input type="hidden" name="reply_id" id="reply_id">
-        <input type="text" name="name" placeholder="Your name" required>
-        <textarea name="comment" placeholder="Your comment" rows="4" required></textarea>
-        <button class="submit" type="submit" name="submit">Submit</button>
-      </form>
+  <div class="container">
+    <a href="index.php" class="back-button">Back</a>
+
+    <h3>Community Forum</h3>
+
+    <!-- Comments Section -->
+    <div class="comments-container">
+      <?php
+      $datas = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = 0 ORDER BY date DESC");
+      while ($data = mysqli_fetch_assoc($datas)) {
+          ?>
+          <div class="comment" id="comment-<?php echo $data['id']; ?>">
+              <div class="author"><?php echo $data['name']; ?> <span class="date"><?php echo $data['date']; ?></span></div>
+              <div class="text">
+                  <p><?php echo $data['comment']; ?></p>
+              </div>
+
+              <button class="minimize-button" onclick="toggleVisibility(<?php echo $data['id']; ?>)">Show Replies</button>
+
+              <div class="comment-content hidden">
+                  <?php
+                  $replies = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = {$data['id']} ORDER BY date DESC");
+                  while ($reply = mysqli_fetch_assoc($replies)) {
+                      ?>
+                      <div class="reply">
+                          <div class="author"><?php echo $reply['name']; ?> <span class="date"><?php echo $reply['date']; ?></span></div>
+                          <div class="text"><?php echo $reply['comment']; ?></div>
+                      </div>
+                      <?php
+                  }
+                  ?>
+
+                  <!-- Reply Form for this comment -->
+                  <form action="" method="post">
+                    <input type="hidden" name="reply_id" value="<?php echo $data['id']; ?>">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <textarea name="comment" placeholder="Your reply" rows="4" required></textarea>
+                    <button type="submit" name="submit">Submit Reply</button>
+                  </form>
+              </div>
+          </div>
+          <?php
+      }
+      ?>
     </div>
 
-    <script>
-      function reply(id, name) {
-        const title = document.getElementById('title');
-        title.innerHTML = "Comment on " + name;
-        document.getElementById('reply_id').value = id;
-      }
+    <!-- Main Comment Form -->
+    <div class="form-container">
+      <h4>Leave a Comment</h4>
+      <form action="" method="post">
+        <input type="hidden" name="reply_id" value="0"> <!-- 0 indicates it's a main comment -->
+        <input type="text" name="name" placeholder="Your name" required>
+        <textarea name="comment" placeholder="Your comment" rows="4" required></textarea>
+        <button type="submit" name="submit">Submit Comment</button>
+      </form>
+    </div>
+  </div>
 
-      function toggleVisibility(commentId) {
-        const commentContent = document.querySelector(`#comment-${commentId} .comment-content`);
-        const minimizeButton = document.querySelector(`#comment-${commentId} .minimize-button`);
-        const previewText = document.getElementById(`preview-${commentId}`);
+  <script>
+    function toggleVisibility(commentId) {
+      const commentContent = document.querySelector(`#comment-${commentId} .comment-content`);
+      const minimizeButton = document.querySelector(`#comment-${commentId} .minimize-button`);
 
-        // Check if the comment content is hidden or visible and toggle accordingly
-        if (commentContent.classList.contains('hidden')) {
-          commentContent.classList.remove('hidden');
-          minimizeButton.textContent = "Minimize";  // Change button to 'Minimize' when content is visible
-          previewText.classList.add('hidden');
-        } else {
-          commentContent.classList.add('hidden');
-          minimizeButton.textContent = "Show";  // Change button to 'Show' when content is hidden
-          previewText.classList.remove('hidden');
-        }
+      if (commentContent.classList.contains('hidden')) {
+        commentContent.classList.remove('hidden');
+        minimizeButton.textContent = "Hide Replies";
+      } else {
+        commentContent.classList.add('hidden');
+        minimizeButton.textContent = "Show Replies";
       }
-    </script>
-  </body>
+    }
+  </script>
+
+</body>
 </html>
